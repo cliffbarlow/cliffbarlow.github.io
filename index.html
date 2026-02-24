@@ -2,13 +2,226 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-adsense-account" content="ca-pub-5230532665428225">
+    <!-- <meta name="google-adsense-account" content="ca-pub-5230532665428225"> -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5230532665428225"
+     crossorigin="anonymous"></script>
     <title>Portal</title>
 </head>
 <body>
     <table>
       <tr>
         <td><a href="https://www.linkedin.com/in/cliffbarlow">LinkedIn Profile</a></td>
+      </tr>
+      <tr>
+        <td>
+          <article>
+    <h1>Setting Up a New Application From Scratch</h1>
+
+    <p>
+      Over the past few weeks, I’ve been setting up a new application from scratch.
+      Not just writing code, but standing up the entire ecosystem around it,
+      from domain to hosting to monetization. It’s been a useful reminder that
+      building software in 2026 is as much about orchestration as it is about programming.
+    </p>
+
+    <p>Here’s what I’ve been doing and what I’ve learned so far.</p>
+
+    <h2>Starting With the Domain and Basic Infrastructure</h2>
+
+    <p>
+      The first step was claiming my own corner of the internet. I already had a domain,
+      so I used Squarespace for DNS management and basic site configuration.
+      It’s simple, reliable, and good enough for early-stage projects.
+    </p>
+
+    <p>
+      From there, I looked at layering in Cloudflare. This would give me better DNS control,
+      SSL, caching, and basic protection without much effort. Cloudflare feels
+      like the default “adult supervision layer” for any public-facing app.
+      Even if the app is small, having HTTPS, DNS flexibility, and edge caching
+      from day one makes things cleaner. The challenge I had here was that I'm not ready 
+      to commit to a disruption in my email service in case my Cloudflare configuration 
+      has any bugs. I'll finish that one later, and am considering purchasing an 
+     “apps” domain to use as a playground for this implementation.
+    </p>
+
+    <p><strong>Lesson:</strong> treat infrastructure like a product feature, not an afterthought.</p>
+
+    <h2>Using AI as a Development Multiplier</h2>
+
+    <p>
+      The most interesting part of this build has been leaning heavily on AI coding assistants.
+      I used ChatGPT, Claude, and Gemini.
+    </p>
+
+    <p>
+      Each has strengths. ChatGPT is strong at structured reasoning and refactoring.
+      Claude is excellent for longer-context work and rewriting large files.
+      Gemini has been surprisingly useful for quick iteration and alternate implementation ideas.
+    </p>
+
+    <p>
+      Rather than asking for “build my app,” I used them as accelerators:
+    </p>
+
+    <ul>
+      <li>Generate boilerplate.</li>
+      <li>Draft API routes.</li>
+      <li>Refactor repetitive UI code.</li>
+      <li>Suggest schema changes.</li>
+      <li>Help debug error messages quickly.</li>
+    </ul>
+
+    <p>
+      What’s changed for me is not that AI writes the whole app.
+      It’s that it compresses the “blank page” problem to near zero.
+      I still review everything. I still make architectural decisions.
+      But I move faster between idea and working feature.
+    </p>
+
+    <p>
+      The meta-skill becomes prompting clearly and evaluating output critically.
+    </p>
+
+    <h2>Hosting for Free (For Now)</h2>
+
+    <p>
+      Early-stage apps don’t need expensive infrastructure. They need validation.
+    </p>
+
+    <p>
+      For the static front end, I used GitHub Pages. It’s incredibly convenient:
+      push to a repo, and you’ve got a live site. For static assets or simple
+      front-end deployments, it’s hard to beat free and simple.
+    </p>
+
+    <p>
+      For the backend, I deployed to Render. Render offers a generous free tier,
+      which is perfect when:
+    </p>
+
+    <ul>
+      <li>Traffic is low.</li>
+      <li>Cold starts are acceptable.</li>
+      <li>You’re experimenting.</li>
+    </ul>
+
+    <p>
+      It’s not designed for high-scale production workloads, but that’s not the goal right now.
+      The goal is to learn, iterate, and test assumptions with minimal burn.
+    </p>
+
+    <p>
+      This approach keeps infrastructure costs at essentially zero while I refine the product.
+    </p>
+
+    <h2>Planning for Monetization Early</h2>
+
+    <p>
+      I don’t want this to be just a technical exercise. I want it to be sustainable.
+    </p>
+
+    <p>
+      So I began the process of setting up Google AdSense to introduce ad-based monetization.
+      The intent is straightforward:
+    </p>
+
+    <ol>
+      <li>Launch on low-cost or free infrastructure.</li>
+      <li>Drive traffic.</li>
+      <li>Use ad revenue to offset hosting costs.</li>
+      <li>Once revenue reliably covers server costs, migrate to AWS for more control and scalability.</li>
+    </ol>
+
+    <p>
+      I’m still waiting on AdSense approval, which is its own process.
+      There are content requirements, policy reviews, and traffic considerations.
+      It forces you to think about legitimacy and value early. That’s probably a good thing.
+    </p>
+
+    <p>
+      Monetization changes the mindset. When you attach even modest revenue expectations
+      to a project, architecture decisions become economic decisions.
+    </p>
+
+    <h2>The Eventual Move to AWS</h2>
+
+    <p>
+      Long term, I expect to move the backend to AWS. Not because I need it today,
+      but because I want:
+    </p>
+
+    <ul>
+      <li>Predictable scaling.</li>
+      <li>Better observability.</li>
+      <li>Cleaner networking controls.</li>
+      <li>More flexibility in architecture.</li>
+    </ul>
+
+    <p>
+      Right now, the app does not justify that complexity or cost. And that’s the key point.
+    </p>
+
+    <p>
+      Engineering maturity isn’t about choosing the most powerful infrastructure.
+      It’s about choosing the infrastructure appropriate to the stage of the product.
+    </p>
+
+    <p>
+      If and when ad revenue consistently covers the hosting bill,
+      that becomes the trigger to upgrade from Render to AWS.
+      At that point, the migration is an investment backed by actual usage,
+      not optimism.
+    </p>
+
+    <h2>What This Process Reinforced for Me</h2>
+
+    <ul>
+      <li><strong>You don’t need perfect architecture to start.</strong> You need something live.</li>
+      <li><strong>AI meaningfully lowers the friction of experimentation.</strong> The cost of trying a new feature is lower than ever.</li>
+      <li><strong>Free tiers are strategic tools.</strong> They buy you time and optionality.</li>
+      <li><strong>Monetization thinking should happen early.</strong> Even if it’s simple ads, revenue alignment clarifies decisions.</li>
+      <li><strong>Infrastructure can evolve with the product.</strong> You don’t need AWS on day one. But you should build in a way that makes migration possible.</li>
+    </ul>
+
+    <h2>Where Things Stand</h2>
+
+    <ul>
+      <li>Domain is configured.</li>
+      <li>DNS and SSL are handled through Squarespace.</li>
+      <li>Front end is live on GitHub Pages.</li>
+      <li>Backend is running on Render’s free tier.</li>
+      <li>AdSense approval is pending.</li>
+      <li>Architecture is intentionally lightweight but migration-aware.</li>
+    </ul>
+
+    <p>
+      It’s not a massive system. It’s not a venture-backed platform.
+      It’s a disciplined experiment.
+    </p>
+
+    <p>
+      But that’s the point.
+    </p>
+
+    <p>
+      In 2026, the barrier to launching something real is lower than ever.
+      The constraint isn’t tooling. It’s clarity, consistency, and willingness to ship.
+    </p>
+
+    <p>
+      This project is a reminder that you can stand up a functioning application,
+      wire up infrastructure, incorporate AI into your workflow, and lay the groundwork
+      for monetization with very little upfront cost.
+    </p>
+
+    <p>
+      Now the next phase begins: traffic, iteration, and learning whether
+      the idea deserves to scale.
+    </p>
+
+  </article>
+        </td>
       </tr>
       <tr>
         <td><a href="https://grazing-manager-next-web.onrender.com/">Grazing Manager Next</a></td>
