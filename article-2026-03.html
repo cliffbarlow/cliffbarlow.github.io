@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+
+  <!-- AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5230532665428225"
+    crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #222;
+    }
+    header, footer {
+      margin-bottom: 40px;
+    }
+    nav a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #0056b3;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    article {
+      margin-bottom: 50px;
+    }
+    footer {
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Cliff Barlow</h1>
+  <p class="subtitle">Software Engineering Leadership · Cloud Architecture · Applied AI</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html">Terms of Use</a>
+  </nav>
+</header>
+    <table>
+      <tr>
+        <td>
+          <article>
+    <h1>When Politeness Beats Accuracy (and Why That’s a Problem)</h1>
+
+    <p>
+      Recently I ran into an interesting limitation while experimenting with Google Gemini. The task itself was trivial: count the number of items 
+      in a JSON collection returned from an API call. Normally I would write a quick script, but I wanted to use the opportunity to explore how well 
+      Gemini could handle simple structured data.
+    </p>
+
+    <p>
+      At first, Gemini returned a number that seemed lower than expected. I asked if the count was correct. Instead of confirming or explaining 
+      uncertainty, Gemini returned a larger number. That immediately raised a red flag. I asked it to check again. The number increased once more.
+    </p>
+
+    <p>
+      Now things were clearly off.
+    </p>
+
+    <p>
+      To tighten the request, I asked Gemini to return both the count and the list of identifiers for the items. Each time I asked it to verify the 
+      result, the number continued to increase. That at least gave me something concrete to examine. I looked at the last item from the original 
+      JSON list and noticed that its identifier did not appear in Gemini’s supposedly "complete" list.
+    </p>
+
+    <p>
+      I pointed this out. Gemini apologized. It recalculated. The answer changed again.
+    </p>
+
+    <p>
+      We repeated this process several times. Each response was polite and apologetic, but also confidently incorrect, accompanied by reassurance 
+      that the results were now accurate.
+    </p>
+
+    <p>
+      Eventually I asked Gemini how it was actually processing the data. The answer confirmed my suspicion: it was only handling the input in small 
+      batches and struggling to maintain state across them. I suggested a more reliable approach: iterate through the batches with a cursor and 
+      maintain a running total.
+    </p>
+
+    <p>
+      Gemini produced a final count of 127.
+    </p>
+
+    <p>
+      Out of curiosity, I wrote a quick Python snippet to parse the JSON locally. The correct count was 61.
+    </p>
+
+    <p>
+      When I pointed that out, Gemini apologized again and accepted the correction.
+    </p>
+
+    <p>
+      What stood out most in this interaction was the role of sycophancy. The model was extremely polite, but its tone created the illusion of 
+      confidence even while the results kept changing. Apologies don’t increase trust when the answers remain wrong.
+    </p>
+
+    <p>
+      The real lesson for me was that an adjustment is needed when interacting with LLMs for tasks like this. Instead of conversational niceties, I 
+      want raw accuracy and explicit limitations. A “fail-fast” mode, where uncertainty, assumptions, and processing constraints are surfaced 
+      immediately, would be far more valuable.
+    </p>
+
+    <p>
+      As LLMs continue evolving, it will be interesting to see whether they develop different conversational modes: one optimized for friendly 
+      interaction, and another optimized for precise, transparent computation.
+    </p>
+
+    <p>
+      Because sometimes, politeness is the opposite of helpfulness.
+    </p>
+
+  </article>
+        </td>
+      </tr>
+    </table>
+<footer>
+  <p>
+    &copy; <script>document.write(new Date().getFullYear());</script> Cliff Barlow.
+    All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>
